@@ -1,5 +1,7 @@
 #! /usr/bin/env node
+
 var program = require('commander');
+
 program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
