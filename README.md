@@ -23,14 +23,3 @@ This will search `nodejs` on google
 |-i|Search image|
 |-v|Search video|
 |-n|Search news|
-
-## TODO
-
-### Add options
-
-search for
-
-- image with i option
-- map with m option
-- news with n option
-- videos with v option
