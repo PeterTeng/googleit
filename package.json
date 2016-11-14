@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "Google it from command line",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PeterTeng/googleit"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DONGSHIH TENG",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "bin": {
+   "googleit": "./index.js"
+  }
 }
