@@ -1,0 +1,11 @@
+{
+  "name": "googleit",
+  "version": "1.0.0",
+  "description": "Google it from command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DONGSHIH TENG",
+  "license": "Apache-2.0"
+}
