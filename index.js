@@ -4,6 +4,7 @@ program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
   .option('-n, --news', 'Search News on Google')
+  .option('-v, --video', 'Search Video on Google')
 
   .action(function(word) {
     var exec = require('child_process').exec;
@@ -15,6 +16,9 @@ program
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.news) {
       cmd = base + word + "&tbm=nws\'"
+      exec(cmd, function(error, stdout, stderr) {});
+    } else if (program.video) {
+      cmd = base + word + "&tbm=vid\'"
       exec(cmd, function(error, stdout, stderr) {});
     } else {
       exec(cmd, function(error, stdout, stderr) {});
