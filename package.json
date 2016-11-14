@@ -13,6 +13,9 @@
   "author": "DONGSHIH TENG",
   "license": "Apache-2.0",
   "bin": {
-   "googleit": "./index.js"
+    "googleit": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
   }
 }
