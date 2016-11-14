@@ -1,6 +1,6 @@
 {
   "name": "googleit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Google it from command line",
   "main": "index.js",
   "repository": {
