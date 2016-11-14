@@ -1,3 +1,3 @@
 #! /usr/bin/env node
-
-console.log('Hello World');
+var baseUrl = "https://www.google.co.jp/#q="
+console.log(baseUrl);
