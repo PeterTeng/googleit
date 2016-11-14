@@ -23,3 +23,7 @@ This will search `nodejs` on google
 |-i|Search image|
 |-v|Search video|
 |-n|Search news|
+
+## License
+
+[BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
