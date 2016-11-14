@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 var co = require('co');
+var prompt = require('co-prompt');
 var program = require('commander');
 
 program
