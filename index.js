@@ -5,6 +5,7 @@ program
   .option('-i, --image', 'Search Image on Google')
   .option('-n, --news', 'Search News on Google')
   .option('-v, --video', 'Search Video on Google')
+  .option('-p, --patent', 'Search Patent on Google')
 
   .action(function(word) {
     String.prototype.replaceAll = function(search, replacement) {
@@ -25,6 +26,9 @@ program
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.video) {
       cmd = base + word + "&tbm=vid\'"
+      exec(cmd, function(error, stdout, stderr) {});
+    } else if (program.patent) {
+      cmd = base + word + "&tbm=pts\'"
       exec(cmd, function(error, stdout, stderr) {});
     } else {
       exec(cmd, function(error, stdout, stderr) {});
