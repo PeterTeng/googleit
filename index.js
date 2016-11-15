@@ -30,4 +30,4 @@ program
       exec(cmd, function(error, stdout, stderr) {});
     }
   })
- .parse(process.argv);
+  .parse(process.argv);
