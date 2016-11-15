@@ -16,6 +16,8 @@ open your terminal and run
 
 This will search `nodejs` on google
 
+If you want to search `javascript es6` which includes whitespace, try `javascript-es6`.
+
 #### Options
 
 |Option|Description|
