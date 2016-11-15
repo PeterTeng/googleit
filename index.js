@@ -7,9 +7,15 @@ program
   .option('-v, --video', 'Search Video on Google')
 
   .action(function(word) {
+    String.prototype.replaceAll = function(search, replacement) {
+      var target = this;
+      return target.split(search).join(replacement);
+    };
+
+    word = word.replaceAll("-", "%20");
+
     var exec = require('child_process').exec;
     var cmd = "open https://google.com/#q=" + word;
-
     let base = "open \'https://google.com/search?q="
     if (program.image) {
       cmd = base + word + "&tbm=isch\'"
