@@ -25,6 +25,8 @@ If you want to search `javascript es6` which includes whitespace, try `javascrip
 |-i|Search image|
 |-v|Search video|
 |-n|Search news|
+|-b|Search book|
+|-p|Search patent|
 
 ## License
 
