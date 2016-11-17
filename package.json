@@ -1,6 +1,6 @@
 {
   "name": "googleit",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Google it from command line",
   "license" : "BSD-3-Clause",
   "main": "index.js",
@@ -12,7 +12,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DONGSHIH TENG",
-  "license": "Apache-2.0",
   "bin": {
     "googleit": "./index.js"
   },
