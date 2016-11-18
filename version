@@ -1,6 +1,10 @@
-platforms:
-  github: "1.1.4"
-  npm: "1.1.4"
-files:
-  package: "1.1.4"
-  index: "1.1.4"
+{
+  "platforms:": {
+    "github": "1.1.4",
+    "npm": "1.1.4"
+  },
+  "files": {
+    "package": "1.1.4",
+    "index": "1.1.4"
+  }
+}
