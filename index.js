@@ -29,8 +29,6 @@ var checkEnvironmentIsTrue = function(param) {
   }
 }
 
-checkEnvironment(checkEnvironmentIsTrue);
-
 // Error message when no any argument
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
@@ -38,6 +36,15 @@ function argumentsExist(wordValue) {
     process.exit(1);
   }
 }
+
+// ReplaceAll function(replaceThisWord, replacement)
+// Use in multiple terms search
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.split(search).join(replacement);
+};
+
+checkEnvironment(checkEnvironmentIsTrue);
 
 // Example command usages in --help
 program
@@ -49,13 +56,6 @@ program
     console.log('    $ googleit -b harry-potter');
     console.log('');
 });
-
-// ReplaceAll function(replaceThisWord, replacement)
-// Use in multiple terms search
-String.prototype.replaceAll = function(search, replacement) {
-  var target = this;
-  return target.split(search).join(replacement);
-};
 
 program
   .arguments('<word>')
