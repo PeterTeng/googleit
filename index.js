@@ -1,19 +1,70 @@
 #! /usr/bin/env node
+
+/*
+ * Module dependencies.
+ */
 var program = require('commander');
+var chalk = require('chalk');
+
+// Googleit's version
+// Only change this in release branch
+program.version('1.1.4');
+
+// Check system is running on macOS or not => Show error message and retrun false
+function checkEnvironment(callback) {
+  var exec = require('child_process').exec;
+  var cmd = 'uname';
+  exec(cmd, function(error, stdout, stderr) {
+    if (!stdout.includes('Darwin')) {
+      let errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
+      console.error(chalk.red(errorMessage));
+      result = false;
+      callback(result);
+      process.exit(1);
+    } else {
+      result = true;
+      callback(result);
+    }
+  })
+}
+
+// Callback for checkEnvironment
+var checkEnvironmentIsTrue = function(param) {
+  if (param === true) {
+    argumentsExist(typeof wordValue);
+  }
+}
+
+// Error message when no any argument
+function argumentsExist(wordValue) {
+  if (wordValue === 'undefined') {
+    let errorMessage = 'Please enter searh terms. "googleit <terms>"'
+    console.error(chalk.red(errorMessage));
+    process.exit(1);
+  }
+}
+
+// ReplaceAll function(replaceThisWord, replacement)
+// Use in multiple terms search
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.split(search).join(replacement);
+};
+
+// CheckEnvironment before check argumentsExistence
+checkEnvironment(checkEnvironmentIsTrue);
 
 // Example command usages in --help
-program
-  .on('--help', function(){
-    console.log('  Examples:');
-    console.log('');
-    console.log('    $ googleit weather-tomorrow');
-    console.log('    $ googleit -i cat');
-    console.log('    $ googleit -b harry-potter');
-    console.log('');
+program.on('--help', function() {
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ googleit weather-tomorrow');
+  console.log('    $ googleit -i cat');
+  console.log('    $ googleit -b harry-potter');
+  console.log('');
 });
 
 program
-  .version('1.1.4')
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
   .option('-n, --news', 'Search News on Google')
@@ -22,40 +73,30 @@ program
   .option('-b, --book', 'Search Book on Google')
 
   .action(function(word) {
-    String.prototype.replaceAll = function(search, replacement) {
-      var target = this;
-      return target.split(search).join(replacement);
-    };
 
     wordValue = word;
-    word = word.replaceAll("-", "%20");
+    word = word.replaceAll('-', '%20');
 
     var exec = require('child_process').exec;
-    var cmd = "open https://google.com/#q=" + word;
+    var cmd = 'open https://google.com/#q=' + word;
     let base = "open \'https://google.com/search?q="
     if (program.image) {
-      cmd = base + word + "&tbm=isch\'"
+      cmd = base + word + "&tbm=isch\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.news) {
-      cmd = base + word + "&tbm=nws\'"
+      cmd = base + word + "&tbm=nws\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.video) {
-      cmd = base + word + "&tbm=vid\'"
+      cmd = base + word + "&tbm=vid\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.patent) {
-      cmd = base + word + "&tbm=pts\'"
+      cmd = base + word + "&tbm=pts\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.book) {
-      cmd = base + word + "&tbm=bks\'"
+      cmd = base + word + "&tbm=bks\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else {
       exec(cmd, function(error, stdout, stderr) {});
     }
   })
   .parse(process.argv);
-
-// Show error message when no search terms' argument provided
-if (typeof wordValue === 'undefined') {
-  console.error('Please enter searh terms "googleit <terms>"');
-  process.exit(1);
-}
