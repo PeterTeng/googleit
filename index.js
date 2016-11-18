@@ -16,6 +16,13 @@ program
     console.log('');
 });
 
+// ReplaceAll function(replaceThisWord, replacement)
+// Use in multiple terms search
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.split(search).join(replacement);
+};
+
 program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
@@ -25,10 +32,6 @@ program
   .option('-b, --book', 'Search Book on Google')
 
   .action(function(word) {
-    String.prototype.replaceAll = function(search, replacement) {
-      var target = this;
-      return target.split(search).join(replacement);
-    };
 
     wordValue = word;
     word = word.replaceAll("-", "%20");
