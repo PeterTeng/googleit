@@ -32,6 +32,14 @@ If you want to search `javascript es6` which includes whitespace, try `javascrip
 |-b|Search book|
 |-p|Search patent|
 
+## System Requirement
+
+Currently supported OS
+
+- macOS
+
+May have some issue with Linux and other OS.
+
 ## License
 
 [BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
