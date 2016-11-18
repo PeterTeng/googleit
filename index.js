@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 var program = require('commander');
 
+// Example command usages in --help
 program
   .on('--help', function(){
     console.log('  Examples:');
