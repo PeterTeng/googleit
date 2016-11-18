@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 var program = require('commander');
 program
+  .version('1.1.4')
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
   .option('-n, --news', 'Search News on Google')
