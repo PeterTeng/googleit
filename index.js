@@ -10,7 +10,7 @@ function checkEnvironment(callback) {
   var exec = require('child_process').exec;
   var cmd = 'uname';
   exec(cmd, function(error, stdout, stderr) {
-    if (!stdout.includes("Darswin")) {
+    if (!stdout.includes("Darwin")) {
       console.error('googleit only supports macOS. Using other OS may causing error.');
       result = false;
       callback(result);
