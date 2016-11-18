@@ -1,5 +1,8 @@
 # GoogleIt
 
+[![NPM Version](http://img.shields.io/npm/v/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
+[![NPM Downloads](https://img.shields.io/npm/dm/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
+
 Command Line Tool for search on google
 
 ## How to use
