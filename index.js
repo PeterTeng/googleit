@@ -10,7 +10,7 @@ function checkEnvironment(callback) {
   var exec = require('child_process').exec;
   var cmd = 'uname';
   exec(cmd, function(error, stdout, stderr) {
-    if (!stdout.includes("Darwin")) {
+    if (!stdout.includes('Darwin')) {
       console.error('googleit only supports macOS. Using other OS may causing error.');
       result = false;
       callback(result);
@@ -68,10 +68,10 @@ program
   .action(function(word) {
 
     wordValue = word;
-    word = word.replaceAll("-", "%20");
+    word = word.replaceAll('-', '%20');
 
     var exec = require('child_process').exec;
-    var cmd = "open https://google.com/#q=" + word;
+    var cmd = 'open https://google.com/#q=' + word;
     let base = "open \'https://google.com/search?q="
     if (program.image) {
       cmd = base + word + "&tbm=isch\'";
