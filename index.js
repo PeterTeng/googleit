@@ -1,6 +1,10 @@
 #! /usr/bin/env node
 var program = require('commander');
 
+// Googleit's version
+// Only change this in release branch
+program.version('1.1.4')
+
 // Example command usages in --help
 program
   .on('--help', function(){
@@ -13,7 +17,6 @@ program
 });
 
 program
-  .version('1.1.4')
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
   .option('-n, --news', 'Search News on Google')
