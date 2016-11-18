@@ -1,5 +1,9 @@
 #! /usr/bin/env node
+
+var co = require('co');
+var prompt = require('co-prompt');
 var program = require('commander');
+
 program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
