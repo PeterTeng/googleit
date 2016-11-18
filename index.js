@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var program = require('commander');
+var chalk = require('chalk');
 
 // Googleit's version
 // Only change this in release branch
