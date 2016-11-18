@@ -25,7 +25,7 @@ function checkEnvironment(callback) {
 // Callback for checkEnvironment
 var checkEnvironmentIsTrue = function(param) {
   if (param === true) {
-    argumentsExist(typeof wordValue)
+    argumentsExist(typeof wordValue);
   }
 }
 
@@ -48,7 +48,7 @@ checkEnvironment(checkEnvironmentIsTrue);
 
 // Example command usages in --help
 program
-  .on('--help', function(){
+  .on('--help', function() {
     console.log('  Examples:');
     console.log('');
     console.log('    $ googleit weather-tomorrow');
@@ -74,19 +74,19 @@ program
     var cmd = "open https://google.com/#q=" + word;
     let base = "open \'https://google.com/search?q="
     if (program.image) {
-      cmd = base + word + "&tbm=isch\'"
+      cmd = base + word + "&tbm=isch\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.news) {
-      cmd = base + word + "&tbm=nws\'"
+      cmd = base + word + "&tbm=nws\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.video) {
-      cmd = base + word + "&tbm=vid\'"
+      cmd = base + word + "&tbm=vid\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.patent) {
-      cmd = base + word + "&tbm=pts\'"
+      cmd = base + word + "&tbm=pts\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else if (program.book) {
-      cmd = base + word + "&tbm=bks\'"
+      cmd = base + word + "&tbm=bks\'";
       exec(cmd, function(error, stdout, stderr) {});
     } else {
       exec(cmd, function(error, stdout, stderr) {});
