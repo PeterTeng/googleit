@@ -16,7 +16,8 @@ function checkEnvironment(callback) {
   var cmd = 'uname';
   exec(cmd, function(error, stdout, stderr) {
     if (!stdout.includes('Darwin')) {
-      console.error('googleit only supports macOS. Using other OS may causing error.');
+      let errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
+      console.error(chalk.red(errorMessage));
       result = false;
       callback(result);
       process.exit(1);
@@ -37,7 +38,8 @@ var checkEnvironmentIsTrue = function(param) {
 // Error message when no any argument
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
-    console.error('Please enter searh terms "googleit <terms>"');
+    let errorMessage = 'Please enter searh terms. "googleit <terms>"'
+    console.error(chalk.red(errorMessage));
     process.exit(1);
   }
 }
