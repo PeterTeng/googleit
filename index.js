@@ -15,6 +15,7 @@ program
       return target.split(search).join(replacement);
     };
 
+    wordValue = word;
     word = word.replaceAll("-", "%20");
 
     var exec = require('child_process').exec;
@@ -40,3 +41,9 @@ program
     }
   })
   .parse(process.argv);
+
+// Show error message when no search terms' argument provided
+if (typeof wordValue === 'undefined') {
+  console.error('Please enter searh terms "googleit <terms>"');
+  process.exit(1);
+}
