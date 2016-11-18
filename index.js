@@ -43,6 +43,6 @@ program
   .parse(process.argv);
 
   if (typeof wordValue === 'undefined') {
-    console.error('Please enter searn terms "googleit <terms>"');
+    console.error('Please enter searh terms "googleit <terms>"');
     process.exit(1);
   }
