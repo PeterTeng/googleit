@@ -22,6 +22,7 @@ function checkEnvironment(callback) {
   })
 }
 
+// Callback for checkEnvironment
 var checkEnvironmentIsTrue = function(param) {
   if (param === true) {
     argumentsExist(typeof wordValue)
