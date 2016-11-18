@@ -42,6 +42,7 @@ program
   })
   .parse(process.argv);
 
+  // Show error message when no search terms' argument provided
   if (typeof wordValue === 'undefined') {
     console.error('Please enter searh terms "googleit <terms>"');
     process.exit(1);
