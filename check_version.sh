@@ -32,24 +32,24 @@ echo_yellow() {
   echo -e "${YELLOW}$1${NC}"
 }
 
-index_version=`cat index.js | grep version | grep -o "'.*'"| tr -d "'"`
-package_version=`perl -nle 'print $& if m{(?<="version": ")[^"]*}' package.json`
-
-current_version=`cat VERSION`
-
-published_latest_version=`npm info googleit version`
-
-echo ""
-echo "--------------------------------------------------"
-echo " Check Version in each file                       "
-echo "--------------------------------------------------"
-echo_cyan "|                   Version on npm : $published_latest_version"
-echo_cyan "|  Current version in version file : $current_version"
-echo "--------------------------------------------------"
-echo_cyan "|              Version in index.js : $index_version"
-echo_cyan "|          Version in package.json : $package_version"
-echo "--------------------------------------------------"
-echo ""
+check_version() {
+  index_version=`cat index.js | grep version | grep -o "'.*'"| tr -d "'"`
+  package_version=`perl -nle 'print $& if m{(?<="version": ")[^"]*}' package.json`
+  current_version=`cat VERSION`
+  published_latest_version=`npm info googleit version`
+  echo ""
+  echo "--------------------------------------------------"
+  echo " Check Version in each file                       "
+  echo "--------------------------------------------------"
+  echo_cyan "|                   Version on npm : $published_latest_version"
+  echo_cyan "|  Current version in version file : $current_version"
+  echo "--------------------------------------------------"
+  echo_cyan "|              Version in index.js : $index_version"
+  echo_cyan "|          Version in package.json : $package_version"
+  echo "--------------------------------------------------"
+  echo ""
+}
+check_version
 
 read -r -p "Are you going to match all version strings in project? [y/N] " response
 case $response in
@@ -77,19 +77,7 @@ case $response in
       else
         echo_warning "Version format should be like 2.1.0"
       fi
-      index_version=`cat index.js | grep version | grep -o "'.*'"| tr -d "'"`
-      package_version=`perl -nle 'print $& if m{(?<="version": ")[^"]*}' package.json`
-
-      current_version=`cat VERSION`
-
-      published_latest_version=`npm info googleit version`
-      echo "--------------------------------------------------"
-      echo_cyan "|                   Version on npm : $published_latest_version"
-      echo_cyan "|  Current version in version file : $current_version"
-      echo "--------------------------------------------------"
-      echo_cyan "|              Version in index.js : $index_version"
-      echo_cyan "|          Version in package.json : $package_version"
-      echo "--------------------------------------------------"
+      check_version
       ;;
     *)
       echo "Restart if you want to replace version strings"
