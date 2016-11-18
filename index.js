@@ -1,5 +1,17 @@
 #! /usr/bin/env node
 var program = require('commander');
+
+// Example command usages in --help
+program
+  .on('--help', function(){
+    console.log('  Examples:');
+    console.log('');
+    console.log('    $ googleit weather-tomorrow');
+    console.log('    $ googleit -i cat');
+    console.log('    $ googleit -b harry-potter');
+    console.log('');
+});
+
 program
   .version('1.1.4')
   .arguments('<word>')
