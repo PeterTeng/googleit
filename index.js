@@ -44,6 +44,7 @@ String.prototype.replaceAll = function(search, replacement) {
   return target.split(search).join(replacement);
 };
 
+// CheckEnvironment before check argumentsExistence
 checkEnvironment(checkEnvironmentIsTrue);
 
 // Example command usages in --help
