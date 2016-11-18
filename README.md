@@ -2,6 +2,7 @@
 
 [![NPM Version](http://img.shields.io/npm/v/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
 [![NPM Downloads](https://img.shields.io/npm/dm/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
+[![GitHub issues](https://img.shields.io/github/issues-raw/PeterTeng/googleit.svg)](https://github.com/PeterTeng/googleit/issues)
 
 Command Line Tool for search on google
 
