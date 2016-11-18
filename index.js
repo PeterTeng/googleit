@@ -5,6 +5,39 @@ var program = require('commander');
 // Only change this in release branch
 program.version('1.1.4')
 
+// Check system is running on macOS or not => Show error message and retrun false
+function checkEnvironment(callback) {
+  var exec = require('child_process').exec;
+  var cmd = 'uname';
+  exec(cmd, function(error, stdout, stderr) {
+    if (!stdout.includes("Darswin")) {
+      console.error('googleit only supports macOS. Using other OS may causing error.');
+      result = false;
+      callback(result);
+      process.exit(1);
+    } else {
+      result = true;
+      callback(result);
+    }
+  })
+}
+
+var checkEnvironmentIsTrue = function(param) {
+  if (param === true) {
+    argumentsExist(typeof wordValue)
+  }
+}
+
+checkEnvironment(checkEnvironmentIsTrue);
+
+// Error message when no any argument
+function argumentsExist(wordValue) {
+  if (wordValue === 'undefined') {
+    console.error('Please enter searh terms "googleit <terms>"');
+    process.exit(1);
+  }
+}
+
 // Example command usages in --help
 program
   .on('--help', function(){
@@ -59,9 +92,3 @@ program
     }
   })
   .parse(process.argv);
-
-// Show error message when no search terms' argument provided
-if (typeof wordValue === 'undefined') {
-  console.error('Please enter searh terms "googleit <terms>"');
-  process.exit(1);
-}
