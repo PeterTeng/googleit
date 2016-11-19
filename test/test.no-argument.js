@@ -6,16 +6,20 @@ exec(cmd, function(error, stdout, stderr) {
   if (!stdout.includes('Darwin')) {
     cmd = 'node index.js';
     exec(cmd, function(error, stdout, stderr) {
-      error.message.should.be.exactly('Command failed: node index.js\ngoogleit only supports macOS. Using other OS may causing error.\n');
+      error.message.includes('Command failed:').should.be.true;
+      error.message.includes('googleit only supports macOS. Using other OS may causing error.').should.be.true;
     })
   } else {
     function testErrorMessage(error, stdout, stderr, option) {
       stdout.should.be.exactly('');
       should.exist(error.message);
       if ( option === 'noOption') {
-        error.message.should.be.exactly('Command failed: node index.js\nPlease enter search terms. "googleit <terms>"\n');
+        error.message.includes('Command failed:').should.be.true;
+        error.message.includes('Please enter search terms. "googleit <terms>"').should.be.true;
       } else {
-        error.message.should.be.exactly('Command failed: node index.js -' + option + '\nPlease enter search terms. "googleit <terms>"\n');
+        error.message.includes('Command failed:').should.be.true;
+        error.message.includes(option).should.be.true;
+        error.message.includes('Please enter search terms. "googleit <terms>"').should.be.true;
       }
     }
 
