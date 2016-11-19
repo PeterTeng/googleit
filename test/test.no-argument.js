@@ -1,7 +1,7 @@
 var should = require('should');
 
 var exec = require('child_process').exec;
-var cmd = 'uname'
+var cmd = 'uname -s'
 exec(cmd, function(error, stdout, stderr) {
   if (!stdout.includes('Darwin')) {
     // Do nothing
