@@ -1,12 +1,17 @@
 var should = require('should');
 
+// Check if error tyype is command failed
+function shouldBeCommandFailed(error) {
+  error.message.includes('Command failed:').should.be.true;
+}
+
 var exec = require('child_process').exec;
 var cmd = 'uname -s'
 exec(cmd, function(error, stdout, stderr) {
   if (!stdout.includes('Darwin')) {
     cmd = 'node index.js';
     exec(cmd, function(error, stdout, stderr) {
-      error.message.includes('Command failed:').should.be.true;
+      shouldBeCommandFailed(error);
       error.message.includes('googleit only supports macOS. Using other OS may causing error.').should.be.true;
     })
   } else {
@@ -14,10 +19,10 @@ exec(cmd, function(error, stdout, stderr) {
       stdout.should.be.exactly('');
       should.exist(error.message);
       if ( option === 'noOption') {
-        error.message.includes('Command failed:').should.be.true;
+        shouldBeCommandFailed(error);
         error.message.includes('Please enter search terms. "googleit <terms>"').should.be.true;
       } else {
-        error.message.includes('Command failed:').should.be.true;
+        shouldBeCommandFailed(error);
         error.message.includes(option).should.be.true;
         error.message.includes('Please enter search terms. "googleit <terms>"').should.be.true;
       }
