@@ -10,6 +10,12 @@ var chalk = require('chalk');
 // Only change this in release branch
 program.version('1.1.6');
 
+// Print red error message
+function printConsoleError(message) {
+  var fullMessage = '\n    ' + message + '\n'
+  console.error(chalk.red(fullMessage));
+}
+
 // Check system is running on macOS or not => Show error message and retrun false
 function checkEnvironment(callback) {
   var exec = require('child_process').exec;
