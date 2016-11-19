@@ -13,7 +13,7 @@ program.version('1.1.6');
 // Check system is running on macOS or not => Show error message and retrun false
 function checkEnvironment(callback) {
   var exec = require('child_process').exec;
-  var cmd = 'uname';
+  var cmd = 'uname -s';
   exec(cmd, function(error, stdout, stderr) {
     if (!stdout.includes('Darwin')) {
       var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
