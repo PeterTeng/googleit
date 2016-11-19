@@ -5,9 +5,9 @@ function testErrorMessage(error, stdout, stderr, option) {
   stdout.should.be.exactly('');
   should.exist(error.message);
   if ( option === 'noOption') {
-    error.message.should.be.exactly('Command failed: node index.js\nPlease enter searh terms. "googleit <terms>"\n');
+    error.message.should.be.exactly('Command failed: node index.js\nPlease enter search terms. "googleit <terms>"\n');
   } else {
-    error.message.should.be.exactly('Command failed: node index.js -' + option + '\nPlease enter searh terms. "googleit <terms>"\n');
+    error.message.should.be.exactly('Command failed: node index.js -' + option + '\nPlease enter search terms. "googleit <terms>"\n');
   }
 }
 
