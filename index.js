@@ -8,7 +8,7 @@ var chalk = require('chalk');
 
 // Googleit's version
 // Only change this in release branch
-program.version('1.1.5');
+program.version('1.1.6');
 
 // Check system is running on macOS or not => Show error message and retrun false
 function checkEnvironment(callback) {
