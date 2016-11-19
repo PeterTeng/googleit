@@ -16,7 +16,7 @@ function checkEnvironment(callback) {
   var cmd = 'uname';
   exec(cmd, function(error, stdout, stderr) {
     if (!stdout.includes('Darwin')) {
-      let errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
+      var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
       console.error(chalk.red(errorMessage));
       result = false;
       callback(result);
@@ -38,7 +38,7 @@ var checkEnvironmentIsTrue = function(param) {
 // Error message when no any argument
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
-    let errorMessage = 'Please enter search terms. "googleit <terms>"'
+    var errorMessage = 'Please enter search terms. "googleit <terms>"'
     console.error(chalk.red(errorMessage));
     process.exit(1);
   }
@@ -79,7 +79,7 @@ program
 
     var exec = require('child_process').exec;
     var cmd = 'open https://google.com/#q=' + word;
-    let base = "open \'https://google.com/search?q="
+    var base = "open \'https://google.com/search?q="
     if (program.image) {
       cmd = base + word + "&tbm=isch\'";
       exec(cmd, function(error, stdout, stderr) {});
