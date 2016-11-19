@@ -4,7 +4,10 @@ var exec = require('child_process').exec;
 var cmd = 'uname -s'
 exec(cmd, function(error, stdout, stderr) {
   if (!stdout.includes('Darwin')) {
-    // Do nothing
+    cmd = 'node index.js';
+    exec(cmd, function(error, stdout, stderr) {
+      error.message.should.be.exactly('Command failed: node index.js\ngoogleit only supports macOS. Using other OS may causing error.\n');
+    })
   } else {
     function testErrorMessage(error, stdout, stderr, option) {
       stdout.should.be.exactly('');
