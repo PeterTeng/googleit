@@ -57,9 +57,19 @@ exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'n');
     })
 
+    var cmd = 'node index.js --news';
+    exec(cmd, function(error, stdout, stderr) {
+      testErrorMessage(error, stdout, stderr, 'news');
+    })
+
     var cmd = 'node index.js -v';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'v');
+    })
+
+    var cmd = 'node index.js --video';
+    exec(cmd, function(error, stdout, stderr) {
+      testErrorMessage(error, stdout, stderr, 'video');
     })
 
     var cmd = 'node index.js -p';
@@ -67,9 +77,19 @@ exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'p');
     })
 
+    var cmd = 'node index.js --patent';
+    exec(cmd, function(error, stdout, stderr) {
+      testErrorMessage(error, stdout, stderr, 'patent');
+    })
+
     var cmd = 'node index.js -b';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'b');
+    })
+
+    var cmd = 'node index.js --book';
+    exec(cmd, function(error, stdout, stderr) {
+      testErrorMessage(error, stdout, stderr, 'book');
     })
   }
 })
