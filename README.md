@@ -1,5 +1,4 @@
 # GoogleIt
-https://travis-ci.org/PeterTeng/googleit
 [![Build Status](https://api.travis-ci.org/PeterTeng/googleit.svg?branch=master)](https://travis-ci.org/PeterTeng/googleit
 )
 [![NPM Version](http://img.shields.io/npm/v/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
