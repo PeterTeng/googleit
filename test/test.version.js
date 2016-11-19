@@ -23,8 +23,8 @@ currentVersion = currentVersion.replaceAll('\n', '');
 
 
 var testVersionMatch = function(result) {
-  let shouldEqualVersion = currentVersion;
-  let programVersion = result;
+  var shouldEqualVersion = currentVersion;
+  var programVersion = result;
   programVersion.should.equal(shouldEqualVersion);
 }
 
