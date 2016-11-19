@@ -10,6 +10,12 @@ var chalk = require('chalk');
 // Only change this in release branch
 program.version('1.1.6');
 
+// Print red error message
+function printConsoleError(message) {
+  var fullMessage = '\n    ' + message + '\n'
+  console.error(chalk.red(fullMessage));
+}
+
 // Check system is running on macOS or not => Show error message and retrun false
 function checkEnvironment(callback) {
   var exec = require('child_process').exec;
@@ -17,7 +23,7 @@ function checkEnvironment(callback) {
   exec(cmd, function(error, stdout, stderr) {
     if (!stdout.includes('Darwin')) {
       var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
-      console.error(chalk.red(errorMessage));
+      printConsoleError(errorMessage);
       result = false;
       callback(result);
       process.exit(1);
@@ -39,7 +45,7 @@ var checkEnvironmentIsTrue = function(param) {
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
     var errorMessage = 'Please enter search terms. "googleit <terms>"'
-    console.error(chalk.red(errorMessage));
+    printConsoleError(errorMessage);
     process.exit(1);
   }
 }
