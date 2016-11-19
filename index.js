@@ -22,8 +22,8 @@ function checkEnvironment(callback) {
   var cmd = 'uname -s';
   exec(cmd, function(error, stdout, stderr) {
     if (!stdout.includes('Darwin')) {
-      var errorMessage = '\n    googleit only supports macOS. Using other OS may causing error.\n';
-      console.error(chalk.red(errorMessage));
+      var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
+      printConsoleError(errorMessage);
       result = false;
       callback(result);
       process.exit(1);
