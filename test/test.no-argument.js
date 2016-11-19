@@ -47,6 +47,11 @@ exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'i');
     })
 
+    var cmd = 'node index.js --image';
+    exec(cmd, function(error, stdout, stderr) {
+      testErrorMessage(error, stdout, stderr, 'image');
+    })
+
     var cmd = 'node index.js -n';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'n');
