@@ -29,4 +29,20 @@ exec(cmd, function(error, stdout, stderr) {
   result.includes('Options:').should.equal(true);
   result.includes('Examples:').should.equal(true);
 
+  // Test Usage content
+  result.includes('index [options] <word>').should.equal(true);
+
+  // Test Option content
+  result.includes('-h, --help     output usage information').should.equal(true);
+  result.includes('-V, --version  output the version number').should.equal(true);
+  result.includes('-i, --image    Search Image on Google').should.equal(true);
+  result.includes('-n, --news     Search News on Google').should.equal(true);
+  result.includes('-v, --video    Search Video on Google').should.equal(true);
+  result.includes('-p, --patent   Search Patent on Google').should.equal(true);
+  result.includes('-b, --book     Search Book on Google').should.equal(true);
+
+  // Test Examples content
+  result.includes('$ googleit weather-tomorrow').should.equal(true);
+  result.includes('$ googleit -i cat').should.equal(true);
+  result.includes('$ googleit -b harry-potter').should.equal(true);
 })
