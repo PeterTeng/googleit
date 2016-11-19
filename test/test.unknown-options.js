@@ -12,9 +12,9 @@ function getUnknownOptionError(callback) {
   })
 }
 var errorMatch = function(result) {
-  result.includes('Command failed:').should.be.true;
-  result.includes('index.js' + ' ' + optionForTest).should.be.true;
-  result.includes('error: unknown option `' + optionForTest).should.be.true;
+  result.includes('Command failed:').should.equal(true);
+  result.includes('index.js' + ' ' + optionForTest).should.equal(true);
+  result.includes('error: unknown option `' + optionForTest).should.equal(true);
 }
 
 getUnknownOptionError(errorMatch);
