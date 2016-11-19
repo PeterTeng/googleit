@@ -1,0 +1,6 @@
+{
+  "name": "GoogleIt",
+  "tagline": "Command Line Tool For Search on Google",
+  "body": "### Welcome to GoogleIt\r\n\r\nGoogleIt is a command line tool that allow you to search on Google in terminal.\r\n\r\n[![NPM Version](http://img.shields.io/npm/v/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)\r\n[![NPM Downloads](https://img.shields.io/npm/dm/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)\r\n[![GitHub issues](https://img.shields.io/github/issues-raw/PeterTeng/googleit.svg)](https://github.com/PeterTeng/googleit/issues)\r\n\r\n\r\n### Usage\r\nWith your computer with macOS.\r\nYou can use \r\n\r\n```shell\r\ngoogleit github\r\n``` \r\n\r\nto search term.\r\n\r\nAlso if you want to search `harry-potter` as a book. You can use `-b` option like this.\r\n\r\n```shell\r\ngoogleit -b harry-potter\r\n```\r\n\r\n### Installation\r\n\r\n`npm install -g googleit`\r\n\r\n#### Options\r\n\r\n|Option|Description|\r\n|---|---|\r\n|-i|Search image|\r\n|-v|Search video|\r\n|-n|Search news|\r\n|-b|Search book|\r\n|-p|Search patent|\r\n\r\n## System Requirement\r\n\r\n- macOS\r\n\r\nMay have some issue with Linux and other OS.\r\n\r\n## License\r\n\r\n[BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
