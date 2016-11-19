@@ -38,7 +38,7 @@ var checkEnvironmentIsTrue = function(param) {
 // Error message when no any argument
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
-    var errorMessage = 'Please enter search terms. "googleit <terms>"'
+    var errorMessage = '\n    Please enter search terms. "googleit <terms>"\n'
     console.error(chalk.red(errorMessage));
     process.exit(1);
   }
