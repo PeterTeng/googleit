@@ -2,7 +2,7 @@
 
 export NODE_ENV=test
 
-echo
+echo ""
 for file in $@; do
   printf "\033[90m   ${file#test/}\033[0m "
   node $file 2> /tmp/stderr && echo "\033[36m✓\033[0m"
@@ -13,4 +13,4 @@ for file in $@; do
     exit $code
   fi
 done
-echo
+echo ""
