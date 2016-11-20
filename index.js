@@ -77,11 +77,16 @@ program
   .option('-v, --video', 'Search Video on Google')
   .option('-p, --patent', 'Search Patent on Google')
   .option('-b, --book', 'Search Book on Google')
+  .option('-e, --except <exception>', 'Search with exception')
 
   .action(function(word) {
 
     wordValue = word;
     word = word.replaceAll('-', '%20');
+
+    if (program.except) {
+      word = word + '%20-' + program.except;
+    }
 
     var exec = require('child_process').exec;
     var cmd = 'open https://google.com/#q=' + word;

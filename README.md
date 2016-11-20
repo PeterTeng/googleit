@@ -32,7 +32,7 @@ Search `nodejs` with command below.
 $ googleit nodejs
 ```
 
-#### Multiple Search Words
+### Multiple Search Words
 
 Search Harry Potter as Book.
 
@@ -49,6 +49,12 @@ $ googleit -b harry-potter
 |-n|Search news|
 |-b|Search book|
 |-p|Search patent|
+
+### Search with exception
+
+```javascript
+googleit hello -e adele
+```
 
 # System Requirement
 
