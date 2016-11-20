@@ -38,13 +38,20 @@ function testHelpOutputWithCommand(cmd) {
     result.includes('index [options] <word>').should.equal(true);
 
     // Test Option content
-    result.includes('-h, --help     output usage information').should.equal(true);
-    result.includes('-V, --version  output the version number').should.equal(true);
-    result.includes('-i, --image    Search Image on Google').should.equal(true);
-    result.includes('-n, --news     Search News on Google').should.equal(true);
-    result.includes('-v, --video    Search Video on Google').should.equal(true);
-    result.includes('-p, --patent   Search Patent on Google').should.equal(true);
-    result.includes('-b, --book     Search Book on Google').should.equal(true);
+    result.includes('-h, --help').should.equal(true);
+    result.includes('output usage information').should.equal(true);
+    result.includes('-V, --version').should.equal(true);
+    result.includes('output the version number').should.equal(true);
+    result.includes('-i, --image').should.equal(true);
+    result.includes('Search Image on Google').should.equal(true);
+    result.includes('-n, --news').should.equal(true);
+    result.includes('Search News on Google').should.equal(true);
+    result.includes('-v, --video').should.equal(true);
+    result.includes('Search Video on Google').should.equal(true);
+    result.includes('-p, --patent').should.equal(true);
+    result.includes('Search Patent on Google').should.equal(true);
+    result.includes('-b, --book').should.equal(true);
+    result.includes('Search Book on Google').should.equal(true);
 
     // Test Examples content
     result.includes('$ googleit weather-tomorrow').should.equal(true);
