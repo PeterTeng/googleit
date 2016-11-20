@@ -6,26 +6,41 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
 [![GitHub issues](https://img.shields.io/github/issues-raw/PeterTeng/googleit.svg)](https://github.com/PeterTeng/googleit/issues)
 
-Command Line Tool for search on google. 
-You can Google it --image --video --book... 
+Command Line Tool for search on google.
+You can Google it with --image --video --book...
 
-## How to use GoogleIt
+# How to use GoogleIt
 
-### Installation
+## Installation
 
-`npm install -g googleit`
+```shell
+$ npm install -g googleit
+```
+Or
 
-### Usage
+```shell
+$ git clone git@github.com:PeterTeng/googleit.git
+$ cd googleit
+$ make install
+```
 
-open your terminal and run
+## Usage
 
-`googleit nodejs`
+Search `nodejs` with command below.
 
-This will search `nodejs` on google
+```shell
+$ googleit nodejs
+```
 
-If you want to search `javascript es6` which includes whitespace, try `javascript-es6`.
+#### Multiple Search Words
 
-#### Options
+Search Harry Potter as Book.
+
+```shell
+$ googleit -b harry-potter
+```
+
+### Options
 
 |Option|Description|
 |---|---|
@@ -35,18 +50,28 @@ If you want to search `javascript es6` which includes whitespace, try `javascrip
 |-b|Search book|
 |-p|Search patent|
 
-## System Requirement
-
-Currently supported OS
+# System Requirement
 
 - macOS
 
-May have some issue with Linux and other OS.
-
-## Website
+# Website
 
 [GoogleIt](https://peterteng.github.io/googleit/)
 
-## License
+# Help Google It?
+
+## Running test
+
+```shell
+$ make test
+```
+
+## Install GoogleIt for development
+
+```shell
+$ make dev-install
+```
+
+# License
 
 [BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
