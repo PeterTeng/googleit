@@ -11,7 +11,7 @@ var should = require('should');
 //   -v, --video               Search Video on Google
 //   -p, --patent              Search Patent on Google
 //   -b, --book                Search Book on Google
-//   -e, --except <exception>  Search not inludes exception
+//   -e, --except <exception>  Search with exception
 //
 // Examples:
 //
@@ -56,7 +56,7 @@ function testHelpOutputWithCommand(cmd) {
     result.includes('-b, --book').should.equal(true);
     result.includes('Search Book on Google').should.equal(true);
     result.includes('-e, --except <exception>').should.equal(true);
-    result.includes('Search not inludes exception').should.equal(true);
+    result.includes('Search with exception').should.equal(true);
 
     // Test Examples content
     result.includes('$ googleit weather-tomorrow').should.equal(true);
