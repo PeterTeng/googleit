@@ -4,3 +4,6 @@ test:
 	@./test/runner.sh $(TESTS)
 
 .PHONY: test
+
+install:
+	which npm && npm install -g googleit

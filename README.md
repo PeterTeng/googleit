@@ -6,14 +6,23 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/googleit.svg?style=flat)](https://www.npmjs.com/package/googleit)
 [![GitHub issues](https://img.shields.io/github/issues-raw/PeterTeng/googleit.svg)](https://github.com/PeterTeng/googleit/issues)
 
-Command Line Tool for search on google. 
-You can Google it --image --video --book... 
+Command Line Tool for search on google.
+You can Google it --image --video --book...
 
 ## How to use GoogleIt
 
 ### Installation
 
-`npm install -g googleit`
+```shell
+npm install -g googleit
+```
+Or
+
+```shell
+$ git clone git@github.com:PeterTeng/googleit.git
+$ cd googleit
+$ make install
+```
 
 ### Usage
 
