@@ -56,6 +56,20 @@ May have some issue with Linux and other OS.
 
 [GoogleIt](https://peterteng.github.io/googleit/)
 
+## Help Google It?
+
+### Running test
+
+```shell
+$ make test
+```
+
+### Install GoogleIt for development
+
+```shell
+$ make dev-install
+```
+
 ## License
 
 [BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
