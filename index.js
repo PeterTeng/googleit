@@ -84,6 +84,10 @@ program
     wordValue = word;
     word = word.replaceAll('-', '%20');
 
+    if (program.except) {
+      word = word + '%20-' + program.except;
+    }
+
     var exec = require('child_process').exec;
     var cmd = 'open https://google.com/#q=' + word;
     var base = "open \'https://google.com/search?q="
