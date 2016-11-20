@@ -77,7 +77,7 @@ program
   .option('-v, --video', 'Search Video on Google')
   .option('-p, --patent', 'Search Patent on Google')
   .option('-b, --book', 'Search Book on Google')
-  .option('-e, --except', 'Search not inludes exception')
+  .option('-e, --except <exception>', 'Search not inludes exception')
 
   .action(function(word) {
 
