@@ -9,9 +9,9 @@
 Command Line Tool for search on google.
 You can Google it --image --video --book...
 
-## How to use GoogleIt
+# How to use GoogleIt
 
-### Installation
+## Installation
 
 ```shell
 npm install -g googleit
@@ -24,7 +24,7 @@ $ cd googleit
 $ make install
 ```
 
-### Usage
+## Usage
 
 open your terminal and run
 
@@ -34,7 +34,7 @@ This will search `nodejs` on google
 
 If you want to search `javascript es6` which includes whitespace, try `javascript-es6`.
 
-#### Options
+### Options
 
 |Option|Description|
 |---|---|
@@ -44,7 +44,7 @@ If you want to search `javascript es6` which includes whitespace, try `javascrip
 |-b|Search book|
 |-p|Search patent|
 
-## System Requirement
+# System Requirement
 
 Currently supported OS
 
@@ -52,24 +52,24 @@ Currently supported OS
 
 May have some issue with Linux and other OS.
 
-## Website
+# Website
 
 [GoogleIt](https://peterteng.github.io/googleit/)
 
-## Help Google It?
+# Help Google It?
 
-### Running test
+## Running test
 
 ```shell
 $ make test
 ```
 
-### Install GoogleIt for development
+## Install GoogleIt for development
 
 ```shell
 $ make dev-install
 ```
 
-## License
+# License
 
 [BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
