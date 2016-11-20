@@ -7,14 +7,14 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/PeterTeng/googleit.svg)](https://github.com/PeterTeng/googleit/issues)
 
 Command Line Tool for search on google.
-You can Google it --image --video --book...
+You can Google it with --image --video --book...
 
 # How to use GoogleIt
 
 ## Installation
 
 ```shell
-npm install -g googleit
+$ npm install -g googleit
 ```
 Or
 
@@ -26,13 +26,19 @@ $ make install
 
 ## Usage
 
-open your terminal and run
+Search `nodejs` with command below.
 
-`googleit nodejs`
+```shell
+$ googleit nodejs
+```
 
-This will search `nodejs` on google
+#### Multiple Search Words
 
-If you want to search `javascript es6` which includes whitespace, try `javascript-es6`.
+Search Harry Potter as Book.
+
+```shell
+$ googleit -b harry-potter
+```
 
 ### Options
 
@@ -46,11 +52,7 @@ If you want to search `javascript es6` which includes whitespace, try `javascrip
 
 # System Requirement
 
-Currently supported OS
-
 - macOS
-
-May have some issue with Linux and other OS.
 
 # Website
 
