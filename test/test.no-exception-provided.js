@@ -21,3 +21,10 @@ var cmd = 'node index.js -e';
 exec(cmd, function(error, stdout, stderr) {
   testErrorMessage(error, stdout, stderr);
 })
+
+
+cmd = 'node index.js -i hello -e';
+
+exec(cmd, function(error, stdout, stderr) {
+  testErrorMessage(error, stdout, stderr);
+})
