@@ -82,7 +82,6 @@ program
 
   .action(function(word) {
 
-    var wordValue = word;
     word = word.replaceAll('-', '%20');
 
     if (program.except) {
