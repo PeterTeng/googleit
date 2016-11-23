@@ -12,7 +12,7 @@ program.version('1.1.9');
 
 // Print red error message
 function printConsoleError(message) {
-  var fullMessage = '\n    ' + message + '\n'
+  var fullMessage = '\n    ' + message + '\n';
   console.error(chalk.red(fullMessage));
 }
 
@@ -20,7 +20,8 @@ function printConsoleError(message) {
 function checkEnvironment(callback) {
   var exec = require('child_process').exec;
   var cmd = 'uname -s';
-  exec(cmd, function(error, stdout, stderr) {
+  var result
+  exec(cmd, function(error, stdout) {
     if (!stdout.includes('Darwin')) {
       var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
       printConsoleError(errorMessage);
@@ -31,7 +32,7 @@ function checkEnvironment(callback) {
       result = true;
       callback(result);
     }
-  })
+  });
 }
 
 // Callback for checkEnvironment
@@ -39,12 +40,12 @@ var checkEnvironmentIsTrue = function(param) {
   if (param === true) {
     argumentsExist(typeof wordValue);
   }
-}
+};
 
 // Error message when no any argument
 function argumentsExist(wordValue) {
   if (wordValue === 'undefined') {
-    var errorMessage = 'Please enter search terms. "googleit <terms>"'
+    var errorMessage = 'Please enter search terms. "googleit <terms>"';
     printConsoleError(errorMessage);
     process.exit(1);
   }
@@ -90,7 +91,7 @@ program
 
     var exec = require('child_process').exec;
     var cmd = 'open https://google.com/#q=' + word;
-    var base = "open \'https://google.com/search?q="
+    var base = "open \'https://google.com/search?q=";
     if (program.image) {
       cmd = base + word + "&tbm=isch\'";
       exec(cmd, function(error, stdout, stderr) {});
