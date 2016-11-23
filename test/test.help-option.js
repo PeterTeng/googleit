@@ -27,8 +27,8 @@ cmd = 'node index.js -h';
 testHelpOutputWithCommand(cmd);
 
 function testHelpOutputWithCommand(cmd) {
-  exec(cmd, function(error, stdout, stderr) {
-    result = stdout;
+  exec(cmd, function(error, stdout) {
+    var result = stdout;
 
     // Test text setion
     result.includes('Usage:').should.equal(true);
@@ -62,5 +62,5 @@ function testHelpOutputWithCommand(cmd) {
     result.includes('$ googleit weather-tomorrow').should.equal(true);
     result.includes('$ googleit -i cat').should.equal(true);
     result.includes('$ googleit -b harry-potter').should.equal(true);
-  })
+  });
 }
