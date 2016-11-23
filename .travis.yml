@@ -12,3 +12,6 @@ node_js:
 branches:
   only:
     - master
+notifications:
+  email:
+    - false
