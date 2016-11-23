@@ -6,10 +6,6 @@
 var program = require('commander');
 var chalk = require('chalk');
 
-function asdf() {
-  console.log('asdf');
-}
-
 // Googleit's version
 // Only change this in release branch
 program.version('1.1.9');
