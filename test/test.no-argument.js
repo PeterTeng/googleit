@@ -1,38 +1,39 @@
 var should = require('should');
 
+var exec = require('child_process').exec;
+
 // Check if error tyype is command failed
 function shouldBeCommandFailed(error) {
   error.message.includes('Command failed:').should.equal(true);
 }
 
-var exec = require('child_process').exec;
-var cmd = 'uname -s'
-exec(cmd, function(error, stdout, stderr) {
+function testErrorMessage(error, stdout, stderr, option) {
+  stdout.should.be.exactly('');
+  should.exist(error.message);
+  if ( option === 'noOption') {
+    shouldBeCommandFailed(error);
+    error.message.includes('Please enter search terms. "googleit <terms>"').should.equal(true);
+  } else {
+    shouldBeCommandFailed(error);
+    error.message.includes(option).should.equal(true);
+    error.message.includes('Please enter search terms. "googleit <terms>"').should.equal(true);
+  }
+}
+
+var cmd = 'uname -s';
+exec(cmd, function(error, stdout) {
   if (!stdout.includes('Darwin')) {
-    cmd = 'node index.js';
-    exec(cmd, function(error, stdout, stderr) {
+    var googleitCmd = 'node index.js';
+    exec(googleitCmd, function(error) {
       shouldBeCommandFailed(error);
       error.message.includes('googleit only supports macOS. Using other OS may causing error.').should.equal(true);
-    })
+    });
   } else {
-    function testErrorMessage(error, stdout, stderr, option) {
-      stdout.should.be.exactly('');
-      should.exist(error.message);
-      if ( option === 'noOption') {
-        shouldBeCommandFailed(error);
-        error.message.includes('Please enter search terms. "googleit <terms>"').should.equal(true);
-      } else {
-        shouldBeCommandFailed(error);
-        error.message.includes(option).should.equal(true);
-        error.message.includes('Please enter search terms. "googleit <terms>"').should.equal(true);
-      }
-    }
-
     var cmd = 'node index.js';
 
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'noOption');
-    })
+    });
 
     // Test option provided but no argument
     // Options
@@ -42,54 +43,54 @@ exec(cmd, function(error, stdout, stderr) {
     //   .option('-v, --video', 'Search Video on Google')
     //   .option('-p, --patent', 'Search Patent on Google')
     //   .option('-b, --book', 'Search Book on Google')
-    var cmd = 'node index.js -i';
+    cmd = 'node index.js -i';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'i');
-    })
+    });
 
-    var cmd = 'node index.js --image';
+    cmd = 'node index.js --image';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'image');
-    })
+    });
 
-    var cmd = 'node index.js -n';
+    cmd = 'node index.js -n';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'n');
-    })
+    });
 
-    var cmd = 'node index.js --news';
+    cmd = 'node index.js --news';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'news');
-    })
+    });
 
-    var cmd = 'node index.js -v';
+    cmd = 'node index.js -v';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'v');
-    })
+    });
 
-    var cmd = 'node index.js --video';
+    cmd = 'node index.js --video';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'video');
-    })
+    });
 
-    var cmd = 'node index.js -p';
+    cmd = 'node index.js -p';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'p');
-    })
+    });
 
-    var cmd = 'node index.js --patent';
+    cmd = 'node index.js --patent';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'patent');
-    })
+    });
 
-    var cmd = 'node index.js -b';
+    cmd = 'node index.js -b';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'b');
-    })
+    });
 
-    var cmd = 'node index.js --book';
+    cmd = 'node index.js --book';
     exec(cmd, function(error, stdout, stderr) {
       testErrorMessage(error, stdout, stderr, 'book');
-    })
+    });
   }
-})
+});
