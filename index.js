@@ -20,7 +20,7 @@ function printConsoleError(message) {
 function checkEnvironment(callback) {
   var exec = require('child_process').exec;
   var cmd = 'uname -s';
-  var result
+  var result;
   exec(cmd, function(error, stdout) {
     if (!stdout.includes('Darwin')) {
       var errorMessage = 'googleit only supports macOS. Using other OS may causing error.';
@@ -82,7 +82,7 @@ program
 
   .action(function(word) {
 
-    wordValue = word;
+    var wordValue = word;
     word = word.replaceAll('-', '%20');
 
     if (program.except) {
@@ -94,21 +94,21 @@ program
     var base = "open \'https://google.com/search?q=";
     if (program.image) {
       cmd = base + word + "&tbm=isch\'";
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     } else if (program.news) {
       cmd = base + word + "&tbm=nws\'";
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     } else if (program.video) {
       cmd = base + word + "&tbm=vid\'";
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     } else if (program.patent) {
       cmd = base + word + "&tbm=pts\'";
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     } else if (program.book) {
       cmd = base + word + "&tbm=bks\'";
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     } else {
-      exec(cmd, function(error, stdout, stderr) {});
+      exec(cmd);
     }
   })
   .parse(process.argv);
