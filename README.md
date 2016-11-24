@@ -78,6 +78,26 @@ $ make test
 $ make dev-install
 ```
 
+## Commit Message
+
+You can follow this emoji commit message template
+
+```
+$ git config commit.template .commit_template
+```
+
+```
+# 🐛 :bug: when fixing a bug
+# 🔥 :fire: when removing code or files
+# 🎨 :art: when improving the format/structure of the code
+# 🐎 :racehorse: when improving performance
+# 📝 :memo: when writing docs
+# 💚 :green_heart: when fixing the CI build
+# ✅ :white_check_mark: when adding tests
+# 👮 :cop: when dealing with security
+# 👕 :shirt: when removing linter warnings
+```
+
 # License
 
 [BSD-3-Clause](https://github.com/PeterTeng/googleit/blob/master/LICENSE)
