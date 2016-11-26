@@ -71,6 +71,8 @@ program.on('--help', function() {
   console.log('');
 });
 
+var wordValue;
+
 program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
@@ -82,6 +84,7 @@ program
 
   .action(function(word) {
 
+    wordValue = word;
     word = word.replaceAll('-', '%20');
 
     if (program.except) {
