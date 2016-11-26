@@ -51,10 +51,8 @@ function argumentsExist(wordValue) {
   }
 }
 
-// ReplaceAll function(replaceThisWord, replacement)
 // Use in multiple terms search
-String.prototype.replaceAll = function(search, replacement) {
-  var target = this;
+function replaceAll(target, search, replacement) {
   return target.split(search).join(replacement);
 };
 
@@ -85,7 +83,7 @@ program
   .action(function(word) {
 
     wordValue = word;
-    word = word.replaceAll('-', '%20');
+    word = replaceAll(word, '-', '%20');
 
     if (program.except) {
       word = word + '%20-' + program.except;
