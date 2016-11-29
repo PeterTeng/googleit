@@ -8,7 +8,7 @@ var chalk = require('chalk');
 
 // Googleit's version
 // Only change this in release branch
-program.version('1.1.9');
+program.version('1.2.0');
 
 // Print red error message
 function printConsoleError(message) {
@@ -51,10 +51,8 @@ function argumentsExist(wordValue) {
   }
 }
 
-// ReplaceAll function(replaceThisWord, replacement)
 // Use in multiple terms search
-String.prototype.replaceAll = function(search, replacement) {
-  var target = this;
+function replaceAll(target, search, replacement) {
   return target.split(search).join(replacement);
 };
 
@@ -71,6 +69,8 @@ program.on('--help', function() {
   console.log('');
 });
 
+var wordValue;
+
 program
   .arguments('<word>')
   .option('-i, --image', 'Search Image on Google')
@@ -82,7 +82,8 @@ program
 
   .action(function(word) {
 
-    word = word.replaceAll('-', '%20');
+    wordValue = word;
+    word = replaceAll(word, '-', '%20');
 
     if (program.except) {
       word = word + '%20-' + program.except;
