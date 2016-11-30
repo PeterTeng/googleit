@@ -6,3 +6,4 @@
 - [ ] Command not found
 - [ ] Options not working
 - [ ] Other error
+- [ ] Not Error
