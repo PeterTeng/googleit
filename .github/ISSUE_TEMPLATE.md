@@ -1,4 +1,8 @@
 ## ISSUE
 
-
-## SOLUTION
+- [ ] Installation
+- [ ] Development setup
+- [ ] Usage
+- [ ] Command not found
+- [ ] Options not working
+- [ ] Other error
