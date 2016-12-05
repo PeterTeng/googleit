@@ -8,7 +8,7 @@ var chalk = require('chalk');
 
 // Googleit's version
 // Only change this in release branch
-program.version('1.2.0');
+program.version('1.2.1');
 
 // Print red error message
 function printConsoleError(message) {

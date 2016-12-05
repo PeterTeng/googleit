@@ -56,6 +56,8 @@ $ googleit -b harry-potter
 googleit hello -e adele
 ```
 
+![dec-06-2016 00-16-01](https://cloud.githubusercontent.com/assets/9393495/20890166/476131de-bb49-11e6-9380-7faae7681755.gif)
+
 # System Requirement
 
 - macOS
