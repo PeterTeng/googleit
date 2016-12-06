@@ -32,6 +32,7 @@
     "index.js"
   ],
   "devDependencies": {
+    "mocha": "^3.1.2",
     "should": "^11.1.1"
   }
 }
